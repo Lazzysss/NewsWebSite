@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Quote login
+{% endblock %}
+
+{% block content %}
+<div class="wrapperLogin">
+	<h1>Введите логин</h1>
+	<p>Введите пожалуйста правильный логин и пароль!</p>
+	<form method="post" action="{% url 'login' %}">
+		<table>
+			{{ form.as_table }}
+			{% csrf_token %}
+			<tr>
+				<td>
+					&nbsp;
+				</td>
+				<td>
+					<input type="submit" value="login">
+				</td>
+			</tr>
+		</table>
+		<p class="formochka">
+			Нету аккаунта ?
+			<a class="register1" href="{% url 'register' %}">Зарегистрироваться</a>
+		</p>
+		<input type="hidden" name="next" value="{{ next }}">
+	</form>
+</div>
+{% endblock content %}

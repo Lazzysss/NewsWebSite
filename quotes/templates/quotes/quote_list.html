@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Последние новости
+{% endblock %}
+
+{% block content %}
+	
+
+	<div class="quote1">
+		<h1>Последние новости</h1>
+		<h2 class="h2pon">Нажмите на название новостя чтоб посмотреть полностю</h2>
+		<table >
+			<tr class="quotehdr">
+			</tr>
+			{% for quote in all_quotes %}
+				<tr class="quoterow {% cycle '' 'altrow' %}">
+	        		<td>
+	        			<a class="newslink" href="{% url 'quote-detail' quote.id %}">
+	        				{{quote.name}}
+	        			</a>
+	        			<br><br>
+	        		</td>
+	    		</tr>
+			{% endfor %}
+		</table>
+	</div>
+
+{% endblock content%}
+

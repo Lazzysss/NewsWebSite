@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All quotes
+{% endblock title %}
+
+{% block content %}
+    <table class="quote">
+        <tr>
+            <td class="tdDEt"><h2>Название: {{ quote.name }}</h2></td>
+        </tr>
+
+        <tr>
+            <td class="tdDEt"><h2>Описание: {{ quote.descriptions }}</h2></td>
+        </tr>
+
+        <tr>
+            <td class="tdDEt"><h2>Дата: {{ quote.Time }}</h2></td>
+        </tr>
+    </table>
+    <p>
+        <a class="back" href="{% url 'show-quotes' %}">Назад</a>
+    </p>    
+{% endblock content %}

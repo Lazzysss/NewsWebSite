@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Добавления новостей
+{% endblock %}
+
+{% block content %}
+	{% if submitted %}
+		<p class="submitted">
+			Вы успешно добавили новость!
+		</p>
+	{% else %}
+		<form class="forms" action="" enctype="multipart/form-data" method="post" novalidate>
+			{% csrf_token %}
+			<table class="pon">
+				{{ form.as_table }}
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<input class="submitt" type="submit" value="Submit">
+					</td>
+				</tr>
+			</table>
+		</form>
+	{% endif %}
+
+{% endblock %}
+
